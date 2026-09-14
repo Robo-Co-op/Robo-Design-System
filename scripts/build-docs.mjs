@@ -6,7 +6,7 @@
  * contrast table from dist/contrast-report.json. Change a token, rebuild, and
  * the docs are correct by construction.
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, cpSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -928,7 +928,7 @@ const page = `<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
-<link rel="stylesheet" href="../dist/css/robo-design-system.css">
+<link rel="stylesheet" href="dist/css/robo-design-system.css">
 <link rel="stylesheet" href="docs.css?v=${assetHash('docs.css')}">
 </head>
 <body>
@@ -964,6 +964,10 @@ ${code()}
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(join(OUT, 'index.html'), page, 'utf8');
+
+/* Docs must be self-contained under docs/ — GitHub Pages (source: /docs)
+   only publishes this folder, so the stylesheet has to live inside it too. */
+cpSync(join(ROOT, 'dist', 'css'), join(OUT, 'dist', 'css'), { recursive: true });
 
 const kb = (Buffer.byteLength(page, 'utf8') / 1024).toFixed(1);
 console.log(`Docs written to docs/index.html (${kb} KB) — ${BRANDS.length} brands, ${report.results.length} contrast rows`);
