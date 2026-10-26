@@ -132,6 +132,7 @@ A deck's `meta.brand` must match the selected variant's brand. Do not use one br
 | `robo-coop-core` | `robo-coop` | core | light | Corporate, governance, partner, investor, consortium, and organization-wide communication. |
 | `robo-coop-dark` | `robo-coop` | expressive | dark | Keynotes, operating-system narratives, human-machine cooperation, and high-contrast event decks. |
 | `robo-lab-core` | `robo-lab` | core | dark | AI systems, product architecture, automation, technical strategy, prototypes, and client demos. |
+| `robo-lab-light` | `robo-lab` | core | light | SME sales decks, enterprise proposals, and training / CoE operating models. |
 | `robo-lab-cyber` | `robo-lab` | expressive | dark | Flagship AI demos, agent systems, experimental launches, technical keynotes, and future-facing product narratives. |
 | `coop-lab-core` | `coop-lab` | core | light | Venture building, entrepreneurship programs, ecosystem partnerships, funding, and cooperative business models. |
 | `coop-lab-hack` | `coop-lab` | expressive | dark | Manifestos, startup events, new ownership concepts, experimental venture launches, and provocative strategy. |

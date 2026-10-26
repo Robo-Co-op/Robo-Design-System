@@ -123,6 +123,43 @@
       }
     },
     {
+      "id": "robo-lab-light",
+      "brand": "robo-lab",
+      "label": "Robo Lab / Light",
+      "mode": "core",
+      "scheme": "light",
+      "fit": "SME sales decks, enterprise proposals, and training / CoE operating models.",
+      "visual": {
+        "bg": "FFFFFF",
+        "surface": "F8FCFE",
+        "surface2": "EAF5FD",
+        "text": "20305B",
+        "muted": "52627F",
+        "border": "7187A3",
+        "primary": "006FB8",
+        "accent": "007DD1",
+        "accent2": "F75326",
+        "danger": "F75326",
+        "success": "1EB2A9",
+        "warning": "FFD166"
+      },
+      "composition": {
+        "titleScale": 1,
+        "panelShape": "square",
+        "borderWidth": 0.8,
+        "ruleWidth": 0.8,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "system-grid",
+        "headerStyle": "lab",
+        "codeHeader": true,
+        "terminal": false,
+        "gridOpacity": 0.05,
+        "scanOpacity": 0
+      }
+    },
+    {
       "id": "robo-lab-cyber",
       "brand": "robo-lab",
       "label": "Robo Lab / Cyber",
