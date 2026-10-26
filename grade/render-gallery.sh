@@ -8,6 +8,12 @@ OUT="${1:-$ROOT/grade/rendered}"
 rm -rf "$OUT"
 mkdir -p "$OUT"
 
+# Keep the original eight-variant baseline intact. Add the seven reviewed Light
+# fingerprints without disabling regression checks when the gallery count grows.
+BASELINE="$OUT/accepted-baseline.json"
+node grade/combine-baselines.mjs "$BASELINE" \
+  "$ROOT/grade/baseline.json" "$ROOT/grade/baseline-robo-lab-light.json"
+
 node generator/build-gallery.mjs
 
 for pptx in generator/output/gallery/*.pptx; do
@@ -25,4 +31,4 @@ for pptx in generator/output/gallery/*.pptx; do
   pdftoppm -png -r 96 "$pdf" "$work/slide" >/dev/null 2>&1
 done
 
-node grade/visual-grade.mjs "$OUT" "$ROOT/grade/baseline.json"
+node grade/visual-grade.mjs "$OUT" "$BASELINE"
