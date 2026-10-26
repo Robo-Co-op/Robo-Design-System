@@ -46,7 +46,7 @@ Create editable Robo presentations from structured deck JSON. Brand identity is 
 |---|---|---|
 | `decide` | What should the audience decide, prioritize, or carry forward? | `cover`, `statement`, `metrics`, `comparison` |
 | `decompose` | What creates the total, loss, value, or outcome? | `metrics`, `process`, `architecture` |
-| `compare` | How do alternatives differ on a common basis? | `comparison`, `architecture` |
+| `compare` | How do the options differ on a common basis? | `comparison`, `architecture` |
 | `change` | What changes while the frame of reference stays stable? | `comparison`, `metrics` |
 | `relationship` | Where do entities sit and how are variables or groups related? | `metrics`, `comparison`, `architecture` |
 | `time` | How does work, governance, or value move over time? | `process`, `demo`, `architecture` |
@@ -102,7 +102,7 @@ Archetypes guide reasoning and composition. They do not replace the renderer con
 | `47` | `time` | Role swimlane flow | `process`, `demo` |
 | `41` | `map` | Layered ecosystem map | `architecture` |
 | `42` | `map` | Value-chain coverage map | `architecture`, `process` |
-| `43` | `map` | Organization classification map | `architecture` |
+| `43` | `map` | Organization classification map | `architecture`, `comparison` |
 | `44` | `map` | Overview + detail zoom | `architecture`, `comparison` |
 | `48` | `map` | Stakeholder network | `architecture` |
 
@@ -132,6 +132,7 @@ A deck's `meta.brand` must match the selected variant's brand. Do not use one br
 | `robo-coop-core` | `robo-coop` | core | light | Corporate, governance, partner, investor, consortium, and organization-wide communication. |
 | `robo-coop-dark` | `robo-coop` | expressive | dark | Keynotes, operating-system narratives, human-machine cooperation, and high-contrast event decks. |
 | `robo-lab-core` | `robo-lab` | core | dark | AI systems, product architecture, automation, technical strategy, prototypes, and client demos. |
+| `robo-lab-light` | `robo-lab` | core | light | SME sales decks, enterprise proposals, and training / CoE operating models. |
 | `robo-lab-cyber` | `robo-lab` | expressive | dark | Flagship AI demos, agent systems, experimental launches, technical keynotes, and future-facing product narratives. |
 | `coop-lab-core` | `coop-lab` | core | light | Venture building, entrepreneurship programs, ecosystem partnerships, funding, and cooperative business models. |
 | `coop-lab-hack` | `coop-lab` | expressive | dark | Manifestos, startup events, new ownership concepts, experimental venture launches, and provocative strategy. |
