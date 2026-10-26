@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "title": "Robo AI Demo",
+    "subtitle": "From fragmented AI tools to an operational delivery system",
+    "brand": "robo-lab",
+    "preset": "robo-lab-core",
+    "author": "Robo Co-op",
+    "language": "en"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Robo AI Demo",
+      "subtitle": "From fragmented AI tools to an operational delivery system",
+      "section": "OPEN"
+    },
+    {
+      "type": "statement",
+      "title": "The bottleneck is no longer access to AI — it is orchestration across real work",
+      "section": "WHY",
+      "body": "Teams already have multiple AI tools. The operational gap appears when those tools must coordinate with people, data, approvals, and existing systems.",
+      "proof": "Design the workflow first. Choose models and agents as interchangeable execution components."
+    },
+    {
+      "type": "metrics",
+      "title": "A useful AI demo should make value visible at three operating levels",
+      "section": "VALUE",
+      "metrics": [
+        {
+          "label": "01 · TIME",
+          "value": "Faster",
+          "note": "Reduce handoffs and repeated manual steps."
+        },
+        {
+          "label": "02 · QUALITY",
+          "value": "Clearer",
+          "note": "Make rules, evidence, and review points explicit."
+        },
+        {
+          "label": "03 · SCALE",
+          "value": "Reusable",
+          "note": "Turn one-off prompting into a repeatable workflow."
+        }
+      ]
+    },
+    {
+      "type": "architecture",
+      "title": "Robo Lab connects people, AI agents, business systems, and evidence in one flow",
+      "section": "SYSTEM",
+      "layers": [
+        {
+          "title": "HUMAN",
+          "nodes": [
+            "User / Operator",
+            "Reviewer"
+          ]
+        },
+        {
+          "title": "ORCHESTRATION",
+          "nodes": [
+            "Robo workflow",
+            "Rules + routing"
+          ]
+        },
+        {
+          "title": "AI",
+          "nodes": [
+            "Model / Agent",
+            "Tool call"
+          ]
+        },
+        {
+          "title": "SYSTEMS",
+          "nodes": [
+            "CRM / Files",
+            "Output / Audit"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "demo",
+      "title": "The demo should show the workflow moving from request to reviewed output",
+      "section": "DEMO",
+      "steps": [
+        {
+          "title": "Receive request"
+        },
+        {
+          "title": "Gather context"
+        },
+        {
+          "title": "Run agents"
+        },
+        {
+          "title": "Review evidence"
+        },
+        {
+          "title": "Deliver output"
+        }
+      ],
+      "screen": {
+        "title": "ROBO_OPERATOR / RUN",
+        "lines": [
+          "$ request accepted",
+          "> context loaded",
+          "> task decomposed",
+          "> agent tools executed",
+          "> evidence attached",
+          "> human review requested",
+          "> output ready"
+        ]
+      }
+    },
+    {
+      "type": "comparison",
+      "title": "The same system can support demos, pilots, and production without changing the visual grammar",
+      "section": "SCALE",
+      "columns": [
+        {
+          "label": "DEMO",
+          "title": "Show the flow",
+          "points": [
+            "One use case",
+            "Visible steps",
+            "Fast feedback"
+          ]
+        },
+        {
+          "label": "PILOT",
+          "title": "Prove the operation",
+          "points": [
+            "Real users",
+            "Measured outcomes",
+            "Defined review"
+          ]
+        },
+        {
+          "label": "PRODUCTION",
+          "title": "Run the system",
+          "points": [
+            "Integrated data",
+            "Controls + logging",
+            "Continuous QA"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "process",
+      "title": "Start from the business workflow, then add AI only where it improves the operating model",
+      "section": "NEXT",
+      "steps": [
+        {
+          "title": "Map",
+          "body": "Define the current workflow and decision points."
+        },
+        {
+          "title": "Select",
+          "body": "Choose the highest-value AI intervention."
+        },
+        {
+          "title": "Prototype",
+          "body": "Build the smallest end-to-end flow."
+        },
+        {
+          "title": "Measure",
+          "body": "Track time, quality, adoption, and risk."
+        },
+        {
+          "title": "Scale",
+          "body": "Standardize what works and integrate it."
+        }
+      ]
+    }
+  ]
+}

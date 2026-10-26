@@ -24,8 +24,10 @@ npm run build     # compile tokens -> CSS
 npm start         # build, generate docs, serve on http://localhost:4173
 ```
 
-There are **no dependencies**. Everything runs on Node's standard library, so the repo
-still builds in five years without an `npm install` archaeology session.
+The tokens, CSS and docs have **no dependencies**. Everything runs on Node's standard
+library, so the repo still builds in five years without an `npm install` archaeology
+session. The one exception is the [Presentation OS](#presentation-os) slide generator,
+which needs `npm install` for `pptxgenjs`.
 
 In a page:
 
@@ -50,6 +52,8 @@ the operating system; add `data-theme="dark"` or `data-theme="light"` to force o
 | `dist/` | Generated. Never edit — `npm run build` overwrites it |
 | `docs/` | Generated documentation site. Open `docs/index.html` |
 | `scripts/` | The build. Roughly 700 lines, all commented |
+| `contracts/`, `generator/`, `grade/`, `slides/`, `taste/`, `qa/`, `visual-systems/` | The [Presentation OS](#presentation-os) — slide rules, PPTX generator and visual tests |
+| `AGENTS.md` | Generated from `contracts/*.json`. Slide-authoring rules for AI agents |
 
 ### Scripts
 
@@ -59,9 +63,11 @@ npm run tokens           # tokens/*.json -> dist/css/tokens.css + dist/tokens.{j
 npm run bundle           # concatenate tokens + base + components -> one stylesheet
 npm run build            # tokens + bundle
 npm run check:contrast   # WCAG 2.1 AA audit; exits non-zero on failure
-npm test                 # build + audit — safe to wire into CI
+npm test                 # build + audit + slide contract/QA checks — safe to wire into CI
 npm run docs             # regenerate the documentation site
 ```
+
+Slide scripts are listed under [Presentation OS](#presentation-os).
 
 ---
 
@@ -279,6 +285,60 @@ its plate stripped, rather than from the `Black BG` master, which is plated.
 
 Everything else — the CSS scope, the docs page, the switcher, the audit — picks it up
 automatically. There is no registry to update.
+
+---
+
+## Presentation OS
+
+A machine-readable, testable system for building editable Robo decks, layered on top of
+the design system. It reuses the brands, logos and fonts above and does not modify the
+tokens, CSS or build. Contributed by jintkim-robo.
+
+A deck is built story-first, then rendered:
+
+1. Frame the audience, decision, evidence boundary and output.
+2. Write the governing claim and a headline ledger before drawing.
+3. Classify each slide into one of **7 communication intents**.
+4. Pick one of **48 composition archetypes** — a reasoning registry, not 48 templates.
+5. Map it to one of **7 semantic layouts**: `cover`, `statement`, `metrics`,
+   `comparison`, `process`, `architecture`, `demo`.
+6. Apply a brand-owned variant, render to editable PowerPoint, run QA.
+
+| Path | What it is |
+|---|---|
+| `contracts/*.json` | Source of truth: storytelling, archetypes, brands, layouts, components, variants |
+| `AGENTS.md` | Generated from the contracts — never edit by hand |
+| `generator/` | Deck JSON → `.pptx` via `pptxgenjs`, plus the deck schema and an example |
+| `visual-systems/` | One personality write-up per brand |
+| `grade/` | Renders every layout × variant to PNG and compares against `baseline.json` |
+| `slides/`, `taste/`, `qa/` | Presentation tokens, layout catalogue, taste presets, slide rules |
+
+Eight variants — a Core and an Expressive mode per brand:
+
+| Brand | Core | Expressive |
+|---|---|---|
+| Robo Co-op | `robo-coop-core` | `robo-coop-dark` |
+| Robo Lab | `robo-lab-core` | `robo-lab-cyber` |
+| Co-op Lab | `coop-lab-core` | `coop-lab-hack` |
+| Robo University | `robo-university-core` | `robo-university-explore` |
+
+```bash
+npm install                    # pptxgenjs — only the slide generator needs it
+npm run slides:contracts       # regenerate AGENTS.md after editing contracts/
+npm run slides:contracts:check # fail if AGENTS.md is stale
+npm run slides:qa              # structural QA on the example deck
+npm run slides:build:example   # -> generator/output/ai-demo-deck.pptx
+npm run slides:gallery         # every layout × variant -> generator/output/gallery/
+npm run slides:visual          # render to PNG and grade (LibreOffice, Poppler, ImageMagick)
+```
+
+`slides:visual` runs in GitHub Actions (`.github/workflows/slide-generator.yml`), which
+installs the render toolchain; 8 variants × 7 layouts = 56 graded renders. Locally it
+needs `bash`, LibreOffice, Poppler and ImageMagick on the path. See `grade/README.md`.
+
+The variant colours in `contracts/variants.json` are copied hex values, not references
+to `tokens/`, and `check:contrast` does not cover them. Changing a brand token does not
+update the slides.
 
 ---
 

@@ -1,0 +1,91 @@
+{
+  "$meta": {
+    "name": "Robo Presentation Taste Controls",
+    "version": "1.0.0"
+  },
+  "axes": {
+    "corporateToExperimental": {
+      "min": 0,
+      "max": 100,
+      "default": 40
+    },
+    "humanToTech": {
+      "min": 0,
+      "max": 100,
+      "default": 50
+    },
+    "minimalToDense": {
+      "min": 0,
+      "max": 100,
+      "default": 40
+    },
+    "lightToDark": {
+      "min": 0,
+      "max": 100,
+      "default": 45
+    },
+    "consultingToProduct": {
+      "min": 0,
+      "max": 100,
+      "default": 50
+    }
+  },
+  "presets": {
+    "robo-coop-core": {
+      "corporateToExperimental": 20,
+      "humanToTech": 50,
+      "minimalToDense": 38,
+      "lightToDark": 15,
+      "consultingToProduct": 40
+    },
+    "robo-coop-dark": {
+      "corporateToExperimental": 40,
+      "humanToTech": 58,
+      "minimalToDense": 42,
+      "lightToDark": 90,
+      "consultingToProduct": 55
+    },
+    "robo-lab-core": {
+      "corporateToExperimental": 55,
+      "humanToTech": 85,
+      "minimalToDense": 45,
+      "lightToDark": 88,
+      "consultingToProduct": 78
+    },
+    "robo-lab-cyber": {
+      "corporateToExperimental": 82,
+      "humanToTech": 92,
+      "minimalToDense": 50,
+      "lightToDark": 98,
+      "consultingToProduct": 88
+    },
+    "coop-lab-core": {
+      "corporateToExperimental": 48,
+      "humanToTech": 32,
+      "minimalToDense": 42,
+      "lightToDark": 20,
+      "consultingToProduct": 48
+    },
+    "coop-lab-hack": {
+      "corporateToExperimental": 92,
+      "humanToTech": 38,
+      "minimalToDense": 55,
+      "lightToDark": 92,
+      "consultingToProduct": 62
+    },
+    "robo-university-core": {
+      "corporateToExperimental": 30,
+      "humanToTech": 40,
+      "minimalToDense": 35,
+      "lightToDark": 15,
+      "consultingToProduct": 35
+    },
+    "robo-university-explore": {
+      "corporateToExperimental": 70,
+      "humanToTech": 45,
+      "minimalToDense": 38,
+      "lightToDark": 88,
+      "consultingToProduct": 48
+    }
+  }
+}

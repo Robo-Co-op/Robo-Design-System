@@ -1,0 +1,98 @@
+{
+  "$meta": {
+    "name": "Robo Presentation Component Contract",
+    "version": "0.2.0",
+    "description": "Reusable presentation primitives. Components support layouts; they do not replace semantic layout selection."
+  },
+  "rules": [
+    "Use components to reinforce meaning, not to simulate a technical aesthetic.",
+    "Use real technical content in terminal or code treatments.",
+    "Use the same component for the same semantic role within one deck.",
+    "Prefer a small vocabulary of repeated components to ad hoc decoration."
+  ],
+  "components": [
+    {
+      "id": "code-header",
+      "purpose": "Machine-readable section context.",
+      "bestFor": [
+        "Robo Lab / Tech",
+        "technical decks"
+      ],
+      "fields": [
+        "brand",
+        "section",
+        "page"
+      ],
+      "constraints": [
+        "Small and subordinate to the title.",
+        "Never use as the main title."
+      ]
+    },
+    {
+      "id": "metric-card",
+      "purpose": "One metric plus a short interpretation.",
+      "bestFor": [
+        "KPIs",
+        "outcomes"
+      ],
+      "fields": [
+        "label",
+        "value",
+        "note"
+      ],
+      "constraints": [
+        "Value dominates.",
+        "One sentence of interpretation maximum."
+      ]
+    },
+    {
+      "id": "terminal-window",
+      "purpose": "Show real agent, API, prompt, command, or system activity.",
+      "bestFor": [
+        "demo",
+        "technical workflow"
+      ],
+      "fields": [
+        "title",
+        "lines"
+      ],
+      "constraints": [
+        "Never invent decorative code.",
+        "Highlight at most one line."
+      ]
+    },
+    {
+      "id": "system-node",
+      "purpose": "Represent a human, agent, service, data source, or system in a flow.",
+      "bestFor": [
+        "architecture",
+        "process"
+      ],
+      "fields": [
+        "label",
+        "kind"
+      ],
+      "constraints": [
+        "Keep labels short.",
+        "Relationships must be explicit."
+      ]
+    },
+    {
+      "id": "evidence-strip",
+      "purpose": "Show source, assumption, status, or evidence metadata at low visual weight.",
+      "bestFor": [
+        "sourced claims",
+        "prototype status",
+        "assumptions"
+      ],
+      "fields": [
+        "kind",
+        "text"
+      ],
+      "constraints": [
+        "Never fabricate evidence metadata.",
+        "Keep below the main reading hierarchy."
+      ]
+    }
+  ]
+}
