@@ -46,7 +46,7 @@ Create editable Robo presentations from structured deck JSON. Brand identity is 
 |---|---|---|
 | `decide` | What should the audience decide, prioritize, or carry forward? | `cover`, `statement`, `metrics`, `comparison` |
 | `decompose` | What creates the total, loss, value, or outcome? | `metrics`, `process`, `architecture` |
-| `compare` | How do the options differ on a common basis? | `comparison`, `architecture` |
+| `compare` | How do alternatives differ on a common basis? | `comparison`, `architecture` |
 | `change` | What changes while the frame of reference stays stable? | `comparison`, `metrics` |
 | `relationship` | Where do entities sit and how are variables or groups related? | `metrics`, `comparison`, `architecture` |
 | `time` | How does work, governance, or value move over time? | `process`, `demo`, `architecture` |
@@ -102,7 +102,7 @@ Archetypes guide reasoning and composition. They do not replace the renderer con
 | `47` | `time` | Role swimlane flow | `process`, `demo` |
 | `41` | `map` | Layered ecosystem map | `architecture` |
 | `42` | `map` | Value-chain coverage map | `architecture`, `process` |
-| `43` | `map` | Organization classification map | `architecture`, `comparison` |
+| `43` | `map` | Organization classification map | `architecture` |
 | `44` | `map` | Overview + detail zoom | `architecture`, `comparison` |
 | `48` | `map` | Stakeholder network | `architecture` |
 
