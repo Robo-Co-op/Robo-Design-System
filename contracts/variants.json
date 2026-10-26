@@ -1,0 +1,311 @@
+{
+  "$meta": {
+    "name": "Robo Presentation Variant Contract",
+    "version": "1.0.0",
+    "description": "Core + Expressive presentation modes for each Robo brand.",
+    "aliases": {
+      "robo-core": "robo-coop-core",
+      "robo-lab-tech": "robo-lab-core",
+      "board-consulting": "robo-coop-core",
+      "impact-story": "robo-coop-core"
+    }
+  },
+  "variants": [
+    {
+      "id": "robo-coop-core",
+      "brand": "robo-coop",
+      "label": "Robo Co-op / Core",
+      "mode": "core",
+      "scheme": "light",
+      "fit": "Corporate, governance, partner, investor, consortium, and organization-wide communication.",
+      "visual": {
+        "bg": "F5F5F0",
+        "surface": "FFFFFF",
+        "surface2": "EEF0EF",
+        "text": "0D0F12",
+        "muted": "475569",
+        "border": "CED3D6",
+        "primary": "0D0F12",
+        "accent": "06B6D4",
+        "accent2": "F59E0B",
+        "danger": "AD2728",
+        "success": "10B981",
+        "warning": "F59E0B"
+      },
+      "composition": {
+        "titleScale": 1,
+        "panelShape": "square",
+        "borderWidth": 0.75,
+        "ruleWidth": 0.75,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "dual-sync",
+        "headerStyle": "identity",
+        "codeHeader": false,
+        "terminal": false,
+        "gridOpacity": 0,
+        "scanOpacity": 0
+      }
+    },
+    {
+      "id": "robo-coop-dark",
+      "brand": "robo-coop",
+      "label": "Robo Co-op / Dark OS",
+      "mode": "expressive",
+      "scheme": "dark",
+      "fit": "Keynotes, operating-system narratives, human-machine cooperation, and high-contrast event decks.",
+      "visual": {
+        "bg": "0D0F12",
+        "surface": "0F172A",
+        "surface2": "151F32",
+        "text": "F5F5F0",
+        "muted": "A7B0BC",
+        "border": "364152",
+        "primary": "F5F5F0",
+        "accent": "06B6D4",
+        "accent2": "F59E0B",
+        "danger": "F87171",
+        "success": "10B981",
+        "warning": "F59E0B"
+      },
+      "composition": {
+        "titleScale": 1.03,
+        "panelShape": "square",
+        "borderWidth": 0.8,
+        "ruleWidth": 0.8,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "dual-sync",
+        "headerStyle": "identity",
+        "codeHeader": false,
+        "terminal": true,
+        "gridOpacity": 0,
+        "scanOpacity": 0
+      }
+    },
+    {
+      "id": "robo-lab-core",
+      "brand": "robo-lab",
+      "label": "Robo Lab / Core",
+      "mode": "core",
+      "scheme": "dark",
+      "fit": "AI systems, product architecture, automation, technical strategy, prototypes, and client demos.",
+      "visual": {
+        "bg": "0A1226",
+        "surface": "183169",
+        "surface2": "101C38",
+        "text": "FFFFFF",
+        "muted": "9BCBF5",
+        "border": "31527F",
+        "primary": "00C3FF",
+        "accent": "65B2F5",
+        "accent2": "F75326",
+        "danger": "F75326",
+        "success": "1EB2A9",
+        "warning": "FFD166"
+      },
+      "composition": {
+        "titleScale": 1,
+        "panelShape": "square",
+        "borderWidth": 0.8,
+        "ruleWidth": 0.8,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "system-grid",
+        "headerStyle": "lab",
+        "codeHeader": true,
+        "terminal": true,
+        "gridOpacity": 0.08,
+        "scanOpacity": 0
+      }
+    },
+    {
+      "id": "robo-lab-cyber",
+      "brand": "robo-lab",
+      "label": "Robo Lab / Cyber",
+      "mode": "expressive",
+      "scheme": "dark",
+      "fit": "Flagship AI demos, agent systems, experimental launches, technical keynotes, and future-facing product narratives.",
+      "visual": {
+        "bg": "05070B",
+        "surface": "0A1226",
+        "surface2": "101C38",
+        "text": "FFFFFF",
+        "muted": "65B2F5",
+        "border": "244A70",
+        "primary": "00C3FF",
+        "accent": "65B2F5",
+        "accent2": "F75326",
+        "danger": "F75326",
+        "success": "1EB2A9",
+        "warning": "FFD166"
+      },
+      "composition": {
+        "titleScale": 1.02,
+        "panelShape": "square",
+        "borderWidth": 0.85,
+        "ruleWidth": 0.9,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "cyber-grid",
+        "headerStyle": "lab",
+        "codeHeader": true,
+        "terminal": true,
+        "gridOpacity": 0.14,
+        "scanOpacity": 0.06
+      }
+    },
+    {
+      "id": "coop-lab-core",
+      "brand": "coop-lab",
+      "label": "Co-op Lab / Core",
+      "mode": "core",
+      "scheme": "light",
+      "fit": "Venture building, entrepreneurship programs, ecosystem partnerships, funding, and cooperative business models.",
+      "visual": {
+        "bg": "FFF9F8",
+        "surface": "FFFFFF",
+        "surface2": "FCEEEF",
+        "text": "1A1416",
+        "muted": "72575B",
+        "border": "F2C8C7",
+        "primary": "FF3F33",
+        "accent": "985CCF",
+        "accent2": "4DA7F9",
+        "danger": "AD2728",
+        "success": "10B981",
+        "warning": "F59E0B"
+      },
+      "composition": {
+        "titleScale": 1.02,
+        "panelShape": "round",
+        "borderWidth": 0.8,
+        "ruleWidth": 0.8,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "collective-blocks",
+        "headerStyle": "manifesto",
+        "codeHeader": false,
+        "terminal": false,
+        "gridOpacity": 0,
+        "scanOpacity": 0
+      }
+    },
+    {
+      "id": "coop-lab-hack",
+      "brand": "coop-lab",
+      "label": "Co-op Lab / Hack",
+      "mode": "expressive",
+      "scheme": "dark",
+      "fit": "Manifestos, startup events, new ownership concepts, experimental venture launches, and provocative strategy.",
+      "visual": {
+        "bg": "160D0F",
+        "surface": "26171A",
+        "surface2": "351B21",
+        "text": "FCEEEF",
+        "muted": "FD9C95",
+        "border": "6D3032",
+        "primary": "FD675B",
+        "accent": "B985E3",
+        "accent2": "4DA7F9",
+        "danger": "FD847B",
+        "success": "10B981",
+        "warning": "FBBF24"
+      },
+      "composition": {
+        "titleScale": 1.07,
+        "panelShape": "square",
+        "borderWidth": 1,
+        "ruleWidth": 1.1,
+        "density": "balanced"
+      },
+      "features": {
+        "motif": "hack-editorial",
+        "headerStyle": "manifesto",
+        "codeHeader": false,
+        "terminal": false,
+        "gridOpacity": 0,
+        "scanOpacity": 0
+      }
+    },
+    {
+      "id": "robo-university-core",
+      "brand": "robo-university",
+      "label": "Robo University / Core",
+      "mode": "core",
+      "scheme": "light",
+      "fit": "Training, curriculum, cohort learning, capability building, learning outcomes, and education partnerships.",
+      "visual": {
+        "bg": "F8FBEF",
+        "surface": "FFFFFF",
+        "surface2": "EFF5E3",
+        "text": "39411E",
+        "muted": "697257",
+        "border": "D6E0C5",
+        "primary": "6EC207",
+        "accent": "9354B6",
+        "accent2": "F9AB02",
+        "danger": "AD2728",
+        "success": "4E8E29",
+        "warning": "F9AB02"
+      },
+      "composition": {
+        "titleScale": 1.02,
+        "panelShape": "round",
+        "borderWidth": 0.8,
+        "ruleWidth": 0.8,
+        "density": "airy"
+      },
+      "features": {
+        "motif": "learning-path",
+        "headerStyle": "progress",
+        "codeHeader": false,
+        "terminal": false,
+        "gridOpacity": 0,
+        "scanOpacity": 0
+      }
+    },
+    {
+      "id": "robo-university-explore",
+      "brand": "robo-university",
+      "label": "Robo University / Explore",
+      "mode": "expressive",
+      "scheme": "dark",
+      "fit": "Learning launches, explorative workshops, future-skills narratives, community learning, and experimental education.",
+      "visual": {
+        "bg": "12160C",
+        "surface": "304528",
+        "surface2": "24341E",
+        "text": "EFF5E3",
+        "muted": "AFC48D",
+        "border": "536A43",
+        "primary": "ABDC1D",
+        "accent": "B880D5",
+        "accent2": "F9AB02",
+        "danger": "F87171",
+        "success": "ABDC1D",
+        "warning": "F9AB02"
+      },
+      "composition": {
+        "titleScale": 1.04,
+        "panelShape": "round",
+        "borderWidth": 0.85,
+        "ruleWidth": 0.85,
+        "density": "airy"
+      },
+      "features": {
+        "motif": "learning-map",
+        "headerStyle": "progress",
+        "codeHeader": false,
+        "terminal": false,
+        "gridOpacity": 0,
+        "scanOpacity": 0
+      }
+    }
+  ]
+}

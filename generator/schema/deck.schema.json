@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roboco-op.org/schemas/robo-deck.schema.json",
+  "title": "Robo Slide Generator Deck",
+  "type": "object",
+  "required": [
+    "meta",
+    "slides"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string",
+          "enum": [
+            "robo-coop",
+            "robo-lab",
+            "coop-lab",
+            "robo-university"
+          ],
+          "default": "robo-lab"
+        },
+        "preset": {
+          "type": "string",
+          "default": "robo-lab-tech"
+        },
+        "author": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "en",
+            "ja"
+          ],
+          "default": "en"
+        }
+      }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "title"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "cover",
+              "statement",
+              "metrics",
+              "comparison",
+              "process",
+              "architecture",
+              "demo"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "proof": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "array"
+          },
+          "columns": {
+            "type": "array"
+          },
+          "steps": {
+            "type": "array"
+          },
+          "layers": {
+            "type": "array"
+          },
+          "screen": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

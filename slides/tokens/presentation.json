@@ -1,0 +1,39 @@
+{
+  "$meta": {
+    "name": "Robo Presentation Tokens",
+    "version": "0.1.0",
+    "description": "Presentation-specific tokens layered on top of the Robo Design System."
+  },
+  "canvas": {
+    "ratio": "16:9",
+    "widthIn": 13.333,
+    "heightIn": 7.5,
+    "safeMarginIn": 0.5
+  },
+  "grid": {
+    "columns": 12,
+    "gutterIn": 0.18,
+    "baselinePt": 8
+  },
+  "type": {
+    "eyebrowPt": 11,
+    "titlePt": 30,
+    "titleMaxPt": 38,
+    "subtitlePt": 17,
+    "bodyPt": 14,
+    "captionPt": 10,
+    "metricPt": 34,
+    "codePt": 10
+  },
+  "density": {
+    "maxPrimaryMessages": 1,
+    "maxBodyWordsDefault": 90,
+    "maxBulletLines": 5,
+    "maxColumnsDefault": 3
+  },
+  "shape": {
+    "cardRadiusPt": 10,
+    "rulePt": 1,
+    "accentRulePt": 2
+  }
+}

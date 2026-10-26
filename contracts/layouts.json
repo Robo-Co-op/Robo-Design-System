@@ -1,0 +1,419 @@
+{
+  "$meta": {
+    "name": "Robo Presentation Layout Contract",
+    "version": "0.2.0",
+    "description": "Machine-readable source of truth for semantic slide layouts. AGENTS.md is generated from contracts."
+  },
+  "rules": [
+    "Choose a layout from the question the slide must answer, not from decoration.",
+    "One slide has one governing message.",
+    "Titles should state a conclusion or decision whenever evidence supports one.",
+    "Reading titles alone should reveal the deck argument.",
+    "Do not force content into a preset layout; use the closest semantic layout and simplify or split the slide.",
+    "Facts, assumptions, estimates, and recommendations must be distinguishable.",
+    "Never invent sources, screenshots, numbers, quotes, customer names, or system outputs."
+  ],
+  "layouts": [
+    {
+      "id": "cover",
+      "label": "Cover",
+      "purpose": "Open a deck with a strong title and minimal metadata.",
+      "answers": "What is this presentation about?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 70
+        },
+        "subtitle": {
+          "type": "string",
+          "required": false,
+          "maxChars": 120
+        },
+        "section": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "deck opener",
+        "major standalone presentation"
+      ],
+      "avoid": [
+        "dense evidence",
+        "multi-part argument"
+      ],
+      "example": {
+        "type": "cover",
+        "title": "Robo Presentation OS",
+        "subtitle": "A repeatable system for story, design, generation, and QA",
+        "section": "OPEN"
+      }
+    },
+    {
+      "id": "statement",
+      "label": "Statement",
+      "purpose": "Pair one governing claim with one supporting proof or implication.",
+      "answers": "What is the single idea the audience should remember?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 95
+        },
+        "body": {
+          "type": "string",
+          "required": true,
+          "maxWords": 55
+        },
+        "proof": {
+          "type": "string",
+          "required": false,
+          "maxWords": 45
+        },
+        "source": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "thesis",
+        "insight",
+        "transition",
+        "executive conclusion"
+      ],
+      "avoid": [
+        "long lists",
+        "multi-series data"
+      ],
+      "example": {
+        "type": "statement",
+        "title": "AI adoption breaks at orchestration, not model access",
+        "section": "STATEMENT",
+        "body": "The operating challenge is coordinating people, models, data, approvals, and existing systems in one repeatable flow.",
+        "proof": "Design the workflow first; treat models and agents as replaceable execution components."
+      }
+    },
+    {
+      "id": "metrics",
+      "label": "Metrics",
+      "purpose": "Show a compact scorecard of 2–4 numbers or outcome states.",
+      "answers": "What changed numerically or operationally?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 95
+        },
+        "metrics": {
+          "type": "array",
+          "required": true,
+          "minItems": 2,
+          "maxItems": 4
+        },
+        "source": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "KPIs",
+        "outcomes",
+        "before/after measures",
+        "operating scorecard"
+      ],
+      "avoid": [
+        "unrelated facts",
+        "more than four peer metrics"
+      ],
+      "example": {
+        "type": "metrics",
+        "title": "A useful system makes speed, quality, and reuse visible",
+        "section": "METRICS",
+        "metrics": [
+          {
+            "label": "01 · SPEED",
+            "value": "Faster",
+            "note": "Reduce handoffs and repeated manual work."
+          },
+          {
+            "label": "02 · QUALITY",
+            "value": "Clearer",
+            "note": "Expose rules, evidence, and review points."
+          },
+          {
+            "label": "03 · SCALE",
+            "value": "Reusable",
+            "note": "Turn one-off prompting into a repeatable operating flow."
+          }
+        ]
+      }
+    },
+    {
+      "id": "comparison",
+      "label": "Comparison",
+      "purpose": "Compare 2–3 alternatives on parallel dimensions.",
+      "answers": "How do the options differ?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 95
+        },
+        "columns": {
+          "type": "array",
+          "required": true,
+          "minItems": 2,
+          "maxItems": 3
+        },
+        "source": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "options",
+        "before/after",
+        "maturity stages",
+        "vendor or approach comparison"
+      ],
+      "avoid": [
+        "non-parallel categories",
+        "more than three options"
+      ],
+      "example": {
+        "type": "comparison",
+        "title": "The same grammar can support demo, pilot, and production",
+        "section": "COMPARISON",
+        "columns": [
+          {
+            "label": "DEMO",
+            "title": "Show the flow",
+            "points": [
+              "One use case",
+              "Visible steps",
+              "Fast feedback"
+            ]
+          },
+          {
+            "label": "PILOT",
+            "title": "Prove the operation",
+            "points": [
+              "Real users",
+              "Measured outcomes",
+              "Defined review"
+            ]
+          },
+          {
+            "label": "PRODUCTION",
+            "title": "Run the system",
+            "points": [
+              "Integrated data",
+              "Controls + logging",
+              "Continuous QA"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "process",
+      "label": "Process",
+      "purpose": "Show a sequence of 3–6 meaningful stages.",
+      "answers": "How does the work move from start to finish?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 95
+        },
+        "steps": {
+          "type": "array",
+          "required": true,
+          "minItems": 3,
+          "maxItems": 6
+        },
+        "source": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "workflow",
+        "implementation",
+        "operating model",
+        "roadmap with ordered stages"
+      ],
+      "avoid": [
+        "unordered categories",
+        "complex many-to-many relationships"
+      ],
+      "example": {
+        "type": "process",
+        "title": "Start from the workflow and add AI only where it improves the operating model",
+        "section": "PROCESS",
+        "steps": [
+          {
+            "title": "Map",
+            "body": "Define the current workflow and decision points."
+          },
+          {
+            "title": "Select",
+            "body": "Choose the highest-value AI intervention."
+          },
+          {
+            "title": "Prototype",
+            "body": "Build the smallest end-to-end flow."
+          },
+          {
+            "title": "Measure",
+            "body": "Track time, quality, adoption, and risk."
+          },
+          {
+            "title": "Scale",
+            "body": "Standardize what works and integrate it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "architecture",
+      "label": "Architecture",
+      "purpose": "Show system layers and relationships between people, AI, data, and business systems.",
+      "answers": "What connects to what?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 95
+        },
+        "layers": {
+          "type": "array",
+          "required": true,
+          "minItems": 2,
+          "maxItems": 4
+        },
+        "source": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "system architecture",
+        "agent workflow",
+        "data flow",
+        "operating stack"
+      ],
+      "avoid": [
+        "chronological sequence",
+        "purely quantitative comparison"
+      ],
+      "example": {
+        "type": "architecture",
+        "title": "Robo connects people, orchestration, AI, and systems in one flow",
+        "section": "ARCHITECTURE",
+        "layers": [
+          {
+            "title": "HUMAN",
+            "nodes": [
+              "User / Operator",
+              "Reviewer"
+            ]
+          },
+          {
+            "title": "ORCHESTRATION",
+            "nodes": [
+              "Robo workflow",
+              "Rules + routing"
+            ]
+          },
+          {
+            "title": "AI",
+            "nodes": [
+              "Model / Agent",
+              "Tool call"
+            ]
+          },
+          {
+            "title": "SYSTEMS",
+            "nodes": [
+              "CRM / Files",
+              "Output / Audit"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "demo",
+      "label": "Demo",
+      "purpose": "Explain a product or automation run with a visible flow and system output.",
+      "answers": "What should the audience notice during the demo?",
+      "fields": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxChars": 95
+        },
+        "steps": {
+          "type": "array",
+          "required": true,
+          "minItems": 2,
+          "maxItems": 5
+        },
+        "screen": {
+          "type": "object",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": false
+        }
+      },
+      "bestFor": [
+        "AI demo",
+        "agent run",
+        "automation walkthrough",
+        "product flow"
+      ],
+      "avoid": [
+        "generic architecture",
+        "fictional terminal output"
+      ],
+      "example": {
+        "type": "demo",
+        "title": "The demo makes the run visible from request to reviewed output",
+        "section": "DEMO",
+        "steps": [
+          {
+            "title": "Receive request"
+          },
+          {
+            "title": "Gather context"
+          },
+          {
+            "title": "Run agents"
+          },
+          {
+            "title": "Review evidence"
+          },
+          {
+            "title": "Deliver output"
+          }
+        ],
+        "screen": {
+          "title": "ROBO_OPERATOR / RUN",
+          "lines": [
+            "$ request accepted",
+            "> context loaded",
+            "> task decomposed",
+            "> agent tools executed",
+            "> evidence attached",
+            "> human review requested",
+            "> output ready"
+          ]
+        }
+      }
+    }
+  ]
+}

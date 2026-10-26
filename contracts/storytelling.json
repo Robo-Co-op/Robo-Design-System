@@ -1,0 +1,146 @@
+{
+  "$meta": {
+    "name": "Robo Story-First Presentation Contract",
+    "version": "1.0.0",
+    "description": "Decision-first reasoning and QA rules that sit above semantic layouts and brand styling.",
+    "sourceInspiration": "https://note.com/uchita_success/n/na5babdc58b0e",
+    "adaptation": "Robo-specific synthesis. This contract is authoritative for Robo decks; the external source is inspiration, not a dependency."
+  },
+  "workflow": [
+    {
+      "id": "frame",
+      "label": "Frame the decision",
+      "rule": "Define the audience, decision or action, evidence boundary, and required output before slide design."
+    },
+    {
+      "id": "claim",
+      "label": "Write the governing claim",
+      "rule": "State the deck conclusion first, then write one conclusion-oriented headline per slide before drawing."
+    },
+    {
+      "id": "storyline",
+      "label": "Build the headline ledger",
+      "rule": "For multi-slide decks, verify that headlines form a coherent argument and that peer slides use one consistent split."
+    },
+    {
+      "id": "archetype",
+      "label": "Choose intent and archetype",
+      "rule": "Select the slide's communication intent first, then select a numbered archetype, then map it to the closest supported semantic layout."
+    },
+    {
+      "id": "render",
+      "label": "Apply semantic layout and brand grammar",
+      "rule": "Use the semantic layout as the rendering contract and the selected Robo brand as the visual grammar."
+    },
+    {
+      "id": "qa",
+      "label": "Measure and verify",
+      "rule": "Run structural QA, render the deck, and inspect overflow, collisions, hierarchy, consistency, and evidence traceability."
+    }
+  ],
+  "headline": {
+    "rules": [
+      "One slide has one governing message.",
+      "Prefer a complete claim with an explicit judgment or implication over a topic label.",
+      "Keep evidence and judgment in the same headline when it remains readable.",
+      "Use sentence-pattern variety across adjacent slides.",
+      "Do not use the headline to count elements; use it to state what the elements mean.",
+      "Move secondary evidence into the body before weakening the claim."
+    ],
+    "antiPatterns": [
+      "topic-only headings",
+      "two disconnected claims joined only by punctuation",
+      "self-reference such as 'this slide' or 'this page'",
+      "ornamental slogans that cannot be proven by the body",
+      "invented numbers or unsourced precision"
+    ],
+    "japaneseGuidance": {
+      "targetChars": [30, 60],
+      "firstLineTargetChars": 36,
+      "maxLines": 2,
+      "advisory": true
+    }
+  },
+  "storyline": {
+    "ledgerFields": [
+      "no",
+      "headline",
+      "sentencePattern",
+      "parentContribution",
+      "bridge",
+      "intent",
+      "archetype",
+      "decisionQuestion"
+    ],
+    "rules": [
+      "Headlines read alone should reconstruct the core argument.",
+      "Adjacent slides should have an explicit logical bridge such as cause, consequence, contrast, or evidence.",
+      "Sibling slides should share one segmentation logic and comparable granularity.",
+      "Decision decks should identify the questions that require an explicit choice.",
+      "The final decision slide should resolve decisions, owners or timing rather than merely summarize."
+    ]
+  },
+  "evidence": {
+    "rules": [
+      "Every material number needs a source, a stated calculation basis, or an explicit placeholder.",
+      "Facts, assumptions, estimates, recommendations, and decisions must remain distinguishable.",
+      "Each major clause in a headline should be supported by a visible body element.",
+      "Do not fabricate screenshots, quotes, system output, customer names, or measured results."
+    ]
+  },
+  "visualGrammar": {
+    "lineStyles": {
+      "solid": "actual, confirmed, or primary flow",
+      "dashed": "forecast, plan, alternative, or disappearing state",
+      "dotted": "supporting boundary, reference, or secondary relation"
+    },
+    "fillStyles": {
+      "filled": "actual, owned, selected, or primary",
+      "outline": "planned, target, alternative, or not-yet-realized",
+      "dark": "focus",
+      "light": "context"
+    },
+    "rules": [
+      "Choose axes before placing objects.",
+      "Do not introduce a third visual axis into one diagram; split the view instead.",
+      "Encode magnitude with proportional length, area, width, or weight when magnitude is part of the claim.",
+      "Keep compared elements in stable positions whenever possible.",
+      "Use color semantically and sparingly; brand variants remain the source of truth for actual colors."
+    ]
+  },
+  "chartFallbacks": [
+    {"question": "difference in magnitude", "chart": "bar"},
+    {"question": "change over time", "chart": "line"},
+    {"question": "bridge from start to end", "chart": "waterfall"},
+    {"question": "conversion or loss by stage", "chart": "funnel"},
+    {"question": "product of two quantities", "chart": "area"},
+    {"question": "relationship between two measures", "chart": "scatter"},
+    {"question": "density across two dimensions", "chart": "heatmap"},
+    {"question": "quantity plus composition over time", "chart": "stacked area"},
+    {"question": "flow allocation", "chart": "sankey"}
+  ],
+  "qa": {
+    "headline": [
+      "claim is complete and decision-relevant",
+      "body visibly supports the headline",
+      "no topic-only or self-referential title",
+      "no unsupported numeric precision"
+    ],
+    "story": [
+      "headlines form a coherent vertical argument",
+      "peer slides use one split and consistent granularity",
+      "decision questions are introduced and resolved"
+    ],
+    "visual": [
+      "no overflow or collision",
+      "no orphaned one- or two-character line breaks",
+      "line and fill semantics stay consistent",
+      "comparison axes and positions are comparable",
+      "whitespace is intentional rather than leftover"
+    ]
+  },
+  "exceptions": [
+    "These are defaults, not immutable laws. A deviation is acceptable when it improves truthfulness, accessibility, or decision clarity.",
+    "The semantic layout contract and brand contract remain authoritative for what the current renderer can generate."
+  ]
+}

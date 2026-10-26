@@ -1,0 +1,497 @@
+{
+  "$meta": {
+    "name": "Robo Slide Intent and Archetype Registry",
+    "version": "1.0.0",
+    "description": "A strategy layer above semantic layouts. Archetypes guide composition; slide.type remains the renderer contract.",
+    "sourceInspiration": "https://note.com/uchita_success/n/na5babdc58b0e",
+    "compatibility": "Archetype IDs are optional metadata so existing deck JSON remains valid.",
+    "adaptation": "Robo-native registry inspired by the article's seven-purpose / 48-pattern method. Labels and renderer mappings are adapted to Robo Presentation OS and are not a verbatim transcription of the source."
+  },
+  "intents": [
+    {
+      "id": "decide",
+      "label": "Decide",
+      "question": "What should the audience decide, prioritize, or carry forward?",
+      "defaultSemanticLayouts": [
+        "cover",
+        "statement",
+        "metrics",
+        "comparison"
+      ]
+    },
+    {
+      "id": "decompose",
+      "label": "Decompose",
+      "question": "What creates the total, loss, value, or outcome?",
+      "defaultSemanticLayouts": [
+        "metrics",
+        "process",
+        "architecture"
+      ]
+    },
+    {
+      "id": "compare",
+      "label": "Compare",
+      "question": "How do alternatives differ on a common basis?",
+      "defaultSemanticLayouts": [
+        "comparison",
+        "architecture"
+      ]
+    },
+    {
+      "id": "change",
+      "label": "Show change",
+      "question": "What changes while the frame of reference stays stable?",
+      "defaultSemanticLayouts": [
+        "comparison",
+        "metrics"
+      ]
+    },
+    {
+      "id": "relationship",
+      "label": "Position and relationship",
+      "question": "Where do entities sit and how are variables or groups related?",
+      "defaultSemanticLayouts": [
+        "metrics",
+        "comparison",
+        "architecture"
+      ]
+    },
+    {
+      "id": "time",
+      "label": "Time and process",
+      "question": "How does work, governance, or value move over time?",
+      "defaultSemanticLayouts": [
+        "process",
+        "demo",
+        "architecture"
+      ]
+    },
+    {
+      "id": "map",
+      "label": "Map the structure",
+      "question": "How is a system, organization, ecosystem, or value chain structured?",
+      "defaultSemanticLayouts": [
+        "architecture",
+        "comparison"
+      ]
+    }
+  ],
+  "archetypes": [
+    {
+      "id": "01",
+      "intent": "decide",
+      "label": "Section / navigation",
+      "rendererHints": [
+        "cover",
+        "statement"
+      ]
+    },
+    {
+      "id": "02",
+      "intent": "decide",
+      "label": "Executive decision summary",
+      "rendererHints": [
+        "statement",
+        "comparison"
+      ]
+    },
+    {
+      "id": "03",
+      "intent": "decide",
+      "label": "Decision close",
+      "rendererHints": [
+        "statement",
+        "process"
+      ]
+    },
+    {
+      "id": "04",
+      "intent": "decide",
+      "label": "Repeatable catalog",
+      "rendererHints": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "05",
+      "intent": "decide",
+      "label": "KPI timeline",
+      "rendererHints": [
+        "metrics",
+        "process"
+      ]
+    },
+    {
+      "id": "06",
+      "intent": "decide",
+      "label": "Priority bubble map",
+      "rendererHints": [
+        "comparison",
+        "metrics"
+      ]
+    },
+    {
+      "id": "07",
+      "intent": "decompose",
+      "label": "Waterfall bridge",
+      "rendererHints": [
+        "metrics",
+        "process"
+      ]
+    },
+    {
+      "id": "08",
+      "intent": "decompose",
+      "label": "Funnel loss",
+      "rendererHints": [
+        "process",
+        "metrics"
+      ]
+    },
+    {
+      "id": "09",
+      "intent": "decompose",
+      "label": "Value-chain economics",
+      "rendererHints": [
+        "process",
+        "architecture"
+      ]
+    },
+    {
+      "id": "10",
+      "intent": "decompose",
+      "label": "Distribution cascade",
+      "rendererHints": [
+        "process",
+        "metrics"
+      ]
+    },
+    {
+      "id": "11",
+      "intent": "decompose",
+      "label": "Logic tree",
+      "rendererHints": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "12",
+      "intent": "decompose",
+      "label": "Formula driver tree",
+      "rendererHints": [
+        "architecture",
+        "metrics"
+      ]
+    },
+    {
+      "id": "13",
+      "intent": "decompose",
+      "label": "Active vs waiting band",
+      "rendererHints": [
+        "metrics",
+        "comparison"
+      ]
+    },
+    {
+      "id": "46",
+      "intent": "decompose",
+      "label": "Vertical issue tree",
+      "rendererHints": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "14",
+      "intent": "compare",
+      "label": "Aligned small multiples",
+      "rendererHints": [
+        "comparison",
+        "metrics"
+      ]
+    },
+    {
+      "id": "15",
+      "intent": "compare",
+      "label": "Shared-process comparison",
+      "rendererHints": [
+        "comparison",
+        "process"
+      ]
+    },
+    {
+      "id": "16",
+      "intent": "compare",
+      "label": "Common-scale structure",
+      "rendererHints": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "17",
+      "intent": "compare",
+      "label": "Mirrored flow",
+      "rendererHints": [
+        "comparison",
+        "process"
+      ]
+    },
+    {
+      "id": "18",
+      "intent": "compare",
+      "label": "Mirrored organization",
+      "rendererHints": [
+        "comparison",
+        "architecture"
+      ]
+    },
+    {
+      "id": "19",
+      "intent": "compare",
+      "label": "Risk footprint map",
+      "rendererHints": [
+        "comparison",
+        "metrics"
+      ]
+    },
+    {
+      "id": "45",
+      "intent": "compare",
+      "label": "Evidence-to-implication table",
+      "rendererHints": [
+        "comparison",
+        "statement"
+      ]
+    },
+    {
+      "id": "20",
+      "intent": "change",
+      "label": "Anchored before / after",
+      "rendererHints": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "21",
+      "intent": "change",
+      "label": "Area recomposition",
+      "rendererHints": [
+        "comparison",
+        "metrics"
+      ]
+    },
+    {
+      "id": "22",
+      "intent": "change",
+      "label": "Assumption shift table",
+      "rendererHints": [
+        "comparison",
+        "statement"
+      ]
+    },
+    {
+      "id": "23",
+      "intent": "relationship",
+      "label": "Area-efficiency map",
+      "rendererHints": [
+        "metrics",
+        "comparison"
+      ]
+    },
+    {
+      "id": "24",
+      "intent": "relationship",
+      "label": "Quantitative area grid",
+      "rendererHints": [
+        "metrics",
+        "comparison"
+      ]
+    },
+    {
+      "id": "25",
+      "intent": "relationship",
+      "label": "Trajectory scatter",
+      "rendererHints": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "26",
+      "intent": "relationship",
+      "label": "Cycle scatter",
+      "rendererHints": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "27",
+      "intent": "relationship",
+      "label": "Reference-line scatter",
+      "rendererHints": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "28",
+      "intent": "relationship",
+      "label": "Scatter small multiples + table",
+      "rendererHints": [
+        "metrics",
+        "comparison"
+      ]
+    },
+    {
+      "id": "29",
+      "intent": "relationship",
+      "label": "Interval scatter",
+      "rendererHints": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "30",
+      "intent": "relationship",
+      "label": "Overlap / Venn",
+      "rendererHints": [
+        "architecture",
+        "comparison"
+      ]
+    },
+    {
+      "id": "31",
+      "intent": "relationship",
+      "label": "Actual-to-forecast stacked area",
+      "rendererHints": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "32",
+      "intent": "relationship",
+      "label": "Decision 2x2",
+      "rendererHints": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "33",
+      "intent": "relationship",
+      "label": "Lifecycle + policy",
+      "rendererHints": [
+        "process",
+        "comparison"
+      ]
+    },
+    {
+      "id": "34",
+      "intent": "relationship",
+      "label": "Complementary fit",
+      "rendererHints": [
+        "comparison",
+        "architecture"
+      ]
+    },
+    {
+      "id": "35",
+      "intent": "time",
+      "label": "Horizon swimlanes",
+      "rendererHints": [
+        "process"
+      ]
+    },
+    {
+      "id": "36",
+      "intent": "time",
+      "label": "Modular plan",
+      "rendererHints": [
+        "process"
+      ]
+    },
+    {
+      "id": "37",
+      "intent": "time",
+      "label": "Phase plan",
+      "rendererHints": [
+        "process"
+      ]
+    },
+    {
+      "id": "38",
+      "intent": "time",
+      "label": "Dual-level plan",
+      "rendererHints": [
+        "process",
+        "architecture"
+      ]
+    },
+    {
+      "id": "39",
+      "intent": "time",
+      "label": "Governance handoffs",
+      "rendererHints": [
+        "process",
+        "architecture"
+      ]
+    },
+    {
+      "id": "40",
+      "intent": "time",
+      "label": "Value / cash crossing",
+      "rendererHints": [
+        "process",
+        "architecture"
+      ]
+    },
+    {
+      "id": "47",
+      "intent": "time",
+      "label": "Role swimlane flow",
+      "rendererHints": [
+        "process",
+        "demo"
+      ]
+    },
+    {
+      "id": "41",
+      "intent": "map",
+      "label": "Layered ecosystem map",
+      "rendererHints": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "42",
+      "intent": "map",
+      "label": "Value-chain coverage map",
+      "rendererHints": [
+        "architecture",
+        "process"
+      ]
+    },
+    {
+      "id": "43",
+      "intent": "map",
+      "label": "Organization classification map",
+      "rendererHints": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "44",
+      "intent": "map",
+      "label": "Overview + detail zoom",
+      "rendererHints": [
+        "architecture",
+        "comparison"
+      ]
+    },
+    {
+      "id": "48",
+      "intent": "map",
+      "label": "Stakeholder network",
+      "rendererHints": [
+        "architecture"
+      ]
+    }
+  ]
+}

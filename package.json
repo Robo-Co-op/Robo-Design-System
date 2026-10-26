@@ -1,8 +1,8 @@
 {
   "name": "@robo-coop/design-system",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "Design tokens, logo assets and a framework-free CSS layer for Robo Co-op, Robo Lab, Co-op Lab and Robo University.",
+  "description": "Design tokens, logo assets and a framework-free CSS layer for Robo Co-op, Robo Lab, Co-op Lab and Robo University, plus an AI-ready presentation OS and editable PPTX generator.",
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "sideEffects": [
@@ -20,7 +20,14 @@
     "dist",
     "assets",
     "tokens",
-    "src"
+    "src",
+    "slides",
+    "taste",
+    "qa",
+    "generator",
+    "contracts",
+    "AGENTS.md",
+    "visual-systems"
   ],
   "scripts": {
     "assets": "node scripts/prepare-assets.mjs",
@@ -28,9 +35,18 @@
     "bundle": "node scripts/bundle-css.mjs",
     "build": "npm run tokens && npm run bundle",
     "check:contrast": "node scripts/check-contrast.mjs",
-    "test": "npm run build && npm run check:contrast",
+    "test": "npm run build && npm run check:contrast && npm run slides:contracts:check && npm run slides:qa",
     "docs": "node scripts/build-docs.mjs",
-    "start": "npm run build && npm run docs && node scripts/serve.mjs"
+    "start": "npm run build && npm run docs && node scripts/serve.mjs",
+    "slides:contracts": "node scripts/build-agents.mjs",
+    "slides:contracts:check": "node scripts/build-agents.mjs --check",
+    "slides:qa": "node generator/qa-deck.mjs generator/examples/ai-demo-deck.json",
+    "slides:build:example": "node generator/render-deck.mjs generator/examples/ai-demo-deck.json generator/output/ai-demo-deck.pptx",
+    "slides:gallery": "node generator/build-gallery.mjs",
+    "slides:visual": "bash grade/render-gallery.sh"
+  },
+  "dependencies": {
+    "pptxgenjs": "4.0.1"
   },
   "engines": {
     "node": ">=18"

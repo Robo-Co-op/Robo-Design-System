@@ -1,0 +1,155 @@
+{
+  "$meta": {
+    "name": "Robo Brand Presentation Systems",
+    "version": "1.0.0",
+    "description": "Brand-level presentation identities."
+  },
+  "brands": [
+    {
+      "id": "robo-coop",
+      "name": "Robo Co-op",
+      "tagline": "Support Together — Human⇄Machine Cooperative OS",
+      "promise": "Updating Humanity through Solidarity.",
+      "essence": "A cooperative operating system where people and machines expand human agency together.",
+      "tension": "Human warmth × machine precision",
+      "motif": "dual-sync",
+      "signature": [
+        "paired rails",
+        "sync points",
+        "human/machine handoff",
+        "black-and-white foundation",
+        "cyan signal with amber human accent"
+      ],
+      "notation": [
+        "HUMAN",
+        "MACHINE",
+        "SYNC",
+        "SHARED",
+        "GOVERNANCE"
+      ],
+      "principles": [
+        "Lead with clarity, dignity, and trust.",
+        "Use paired or mirrored structures to express cooperation.",
+        "Use Sync Cyan for connection and Coop Amber sparingly for human agency, care, or decision points.",
+        "Prefer calm, rigorous composition over futuristic spectacle."
+      ],
+      "avoid": [
+        "generic AI neon",
+        "robot clip-art",
+        "cold enterprise blue everywhere",
+        "decorative circuit boards"
+      ]
+    },
+    {
+      "id": "robo-lab",
+      "name": "Robo Lab",
+      "tagline": "Work Together — Pioneering Systemic Lab",
+      "promise": "Scale Innovation Without Borders.",
+      "essence": "An applied systems lab where emerging technology becomes real-world infrastructure and systemic change.",
+      "tension": "Experimental frontier × production discipline",
+      "motif": "system-grid",
+      "signature": [
+        "system grid",
+        "trace lines",
+        "module IDs",
+        "status notation",
+        "blue/cyan signal",
+        "measured cyberpunk energy"
+      ],
+      "notation": [
+        "EXPERIMENT",
+        "SYSTEM",
+        "STATUS",
+        "TRACE",
+        "HUMAN_IN_LOOP",
+        "VALIDATED"
+      ],
+      "principles": [
+        "Make system structure visible.",
+        "Use technical notation only when it carries meaning.",
+        "Core mode is precise and restrained; Cyber mode adds scan, trace, glow-like contrast, and sharper system framing.",
+        "Cyberpunk is a spice, not a costume: no gratuitous neon or fictional code."
+      ],
+      "avoid": [
+        "Kakao imitation",
+        "generic hacker green",
+        "neon overload",
+        "fake terminal text",
+        "sci-fi decoration without system meaning"
+      ]
+    },
+    {
+      "id": "coop-lab",
+      "name": "Co-op Lab",
+      "tagline": "Startup Together — Cooperative Entrepreneurship Lab",
+      "promise": "Let's Hack Capitalism.",
+      "essence": "A venture and ownership lab for building companies, governance, and value distribution differently.",
+      "tension": "Constructive rebellion × credible venture building",
+      "motif": "collective-blocks",
+      "signature": [
+        "offset blocks",
+        "shared ownership tiles",
+        "manifesto labels",
+        "coral/red field",
+        "creative purple counterpoint"
+      ],
+      "notation": [
+        "VENTURE",
+        "OWNERSHIP",
+        "GOVERNANCE",
+        "SHARED VALUE",
+        "EXPERIMENT"
+      ],
+      "principles": [
+        "Feel entrepreneurial, collective, and slightly insurgent.",
+        "Use overlap and offset to show shared ownership and distributed power.",
+        "Core mode stays partner-ready; Hack mode can be more editorial, brutalist, and manifesto-like.",
+        "Keep the energy sharp without sacrificing readability."
+      ],
+      "avoid": [
+        "generic startup gradient",
+        "cute community illustrations",
+        "corporate-red monotony",
+        "chaotic zine styling that obscures the message"
+      ]
+    },
+    {
+      "id": "robo-university",
+      "name": "Robo University",
+      "tagline": "Learn Together — Explorative Digital Education",
+      "promise": "The Never-Ending Update.",
+      "essence": "A continuous learning system that helps people explore emerging tools, build agency, and keep updating.",
+      "tension": "Exploration × progression",
+      "motif": "learning-path",
+      "signature": [
+        "learning paths",
+        "checkpoints",
+        "module maps",
+        "version/progress notation",
+        "lime signal",
+        "purple discovery accent",
+        "gold achievement cue"
+      ],
+      "notation": [
+        "MODULE",
+        "PATH",
+        "CHECKPOINT",
+        "UPDATE",
+        "PRACTICE",
+        "ACHIEVED"
+      ],
+      "principles": [
+        "Make progress visible without making learning feel linear or school-like.",
+        "Use paths, checkpoints, and branching modules as the visual grammar.",
+        "Fresh Lime is the active learning signal; Energy Purple marks exploration; Achieve Gold marks milestones.",
+        "Keep the tone optimistic, capable, and exploratory."
+      ],
+      "avoid": [
+        "school chalkboard clichés",
+        "childish gamification",
+        "green-on-white accessibility failures",
+        "dense academic-document styling"
+      ]
+    }
+  ]
+}
