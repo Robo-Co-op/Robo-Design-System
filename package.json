@@ -27,7 +27,8 @@
     "generator",
     "contracts",
     "AGENTS.md",
-    "visual-systems"
+    "visual-systems",
+    "skills"
   ],
   "scripts": {
     "assets": "node scripts/prepare-assets.mjs",

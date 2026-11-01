@@ -350,6 +350,20 @@ other slide variant.
 
 ---
 
+## Agent skills
+
+Design workflows for AI coding agents, layered on the design system like the Presentation
+OS. They read the tokens, CSS and logos above and do not modify them. Contributed by
+jintkim-robo. See [`skills/README.md`](skills/README.md).
+
+### Web and app UI — Robo Frontend Design
+
+For websites, landing pages, dashboards and other product interfaces, use the [Robo Frontend Design skill](skills/robo-frontend-design/SKILL.md). It adapts Anthropic's intentional-design and self-critique method to the four Robo brands **without changing canonical tokens, typography or logos**. The existing Robo Lab light-blue web theme remains available; dark slide variants are not web defaults.
+
+The Presentation OS above remains authoritative for editable decks.
+
+---
+
 ## Repository
 
 **https://github.com/Aslan03-31/Robo-Design-System** — private, and it must stay that way:
