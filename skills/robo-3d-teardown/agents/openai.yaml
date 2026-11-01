@@ -1,0 +1,4 @@
+interface:
+  display_name: "Robo 3D Teardown"
+  short_description: "Robo-branded interactive 3D mechanism explainers"
+  brand_color: "#007DD1"

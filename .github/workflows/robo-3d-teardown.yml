@@ -1,0 +1,66 @@
+name: Robo Interactive 3D — Build and QA
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "skills/robo-3d-teardown/**"
+      - "tokens/**"
+      - ".github/workflows/robo-3d-teardown.yml"
+      - "package.json"
+  pull_request:
+    paths:
+      - "skills/robo-3d-teardown/**"
+      - "tokens/**"
+      - ".github/workflows/robo-3d-teardown.yml"
+      - "package.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Generate canonical Robo brand tokens
+        run: npm run tokens
+      - name: Checkout reviewed upstream by exact commit
+        env:
+          UPSTREAM_SHA: a91262ac1109051e014662d42ecb0b7bc1f113b1
+        run: |
+          mkdir -p "$RUNNER_TEMP/robo-upstream"
+          git -C "$RUNNER_TEMP/robo-upstream" init -q
+          git -C "$RUNNER_TEMP/robo-upstream" remote add origin https://github.com/elvarofficial/teardown.git
+          git -C "$RUNNER_TEMP/robo-upstream" fetch --depth 1 origin "$UPSTREAM_SHA"
+          git -C "$RUNNER_TEMP/robo-upstream" checkout --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/robo-upstream" rev-parse HEAD)" = "$UPSTREAM_SHA"
+          echo "TEARDOWN_DIR=$RUNNER_TEMP/robo-upstream" >> "$GITHUB_ENV"
+      - name: Install pinned upstream dependencies (no lifecycle scripts)
+        working-directory: ${{ runner.temp }}/robo-upstream
+        run: npm ci --ignore-scripts
+      - name: Install Chromium for browser QA
+        working-directory: ${{ runner.temp }}/robo-upstream
+        run: npx playwright install --with-deps chromium
+      - name: Run pure mechanism and theme tests
+        run: npm run 3d:test
+      - name: Produce offline 3D HTML
+        run: npm run 3d:build
+      - name: Test real browser interactions on desktop and mobile
+        run: npm run 3d:qa
+      - name: Upload interactive HTML, screenshots, and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robo-3d-teardown-demo
+          path: |
+            build/3d/dist/robo-slider-crank.html
+            build/3d/build-manifest.json
+            build/3d/screenshots/
+            build/3d/qa-report.json

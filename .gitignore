@@ -18,3 +18,6 @@ grade/rendered/
 grade/report.json
 grade/report.html
 grade/proposed-baseline.json
+
+# Generated local 3D demonstrations
+build/3d/

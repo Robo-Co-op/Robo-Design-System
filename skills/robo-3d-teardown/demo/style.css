@@ -1,0 +1,77 @@
+/* Robo Lab light — semantic values supplied at runtime from canonical tokens. */
+:root { color-scheme: light; }
+html, body { margin:0; overflow:hidden; background:var(--r3d-bg, #eef6fd); }
+#app { font-family:'Roboto','Noto Sans JP',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--r3d-text); background:var(--r3d-bg); }
+#gl { touch-action:none; cursor:grab; outline:none; }
+#gl.dragging {cursor:grabbing}
+#gl:focus-visible {outline:3px solid var(--r3d-focus);outline-offset:-5px}
+.r3d-ui {position:absolute;inset:0; pointer-events:none; overflow:hidden;z-index:2}
+.r3d-ui button,.r3d-ui input,.r3d-ui a {pointer-events:auto}
+.r3d-ui button {appearance:none;border:1px solid var(--r3d-border);border-radius:10px;background:var(--r3d-panel);color:var(--r3d-text);padding:10px 12px;font:600 13px/1.4 'Roboto','Noto Sans JP',sans-serif;cursor:pointer;transition:box-shadow .2s,background .2s,transform .2s}
+.r3d-ui button:hover {background:var(--r3d-sunken)}
+.r3d-ui button:focus-visible,.r3d-ui input:focus-visible,.r3d-ui a:focus-visible {outline:3px solid var(--r3d-focus);outline-offset:3px}
+.r3d-ui button[aria-pressed=true],.r3d-ui button.primary {background:var(--r3d-action);border-color:var(--r3d-action);color:var(--r3d-on-action)}
+.r3d-ui button.primary:hover,.r3d-ui button[aria-pressed=true]:hover {filter:brightness(.94)}
+.r3d-ui .tag {font:700 11px 'Roboto',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--r3d-accent-text)}
+.r3d-ui .mast {position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:22px 30px;gap:16px;background:linear-gradient(180deg,var(--r3d-bg),transparent)}
+.r3d-ui #robo-logo {height:38px;max-width:145px;object-fit:contain;object-position:left;filter:none}
+.r3d-ui .edition {font:600 11px 'Roboto',sans-serif;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--r3d-border);padding:9px 12px;border-radius:20px;background:var(--r3d-panel)}
+.r3d-ui .intro {position:absolute;top:120px;left:5.5vw;max-width:350px}
+.r3d-ui .intro h1 {font-size:clamp(24px,2.8vw,42px);line-height:1.18;letter-spacing:-.045em;margin:12px 0 16px;font-weight:700}
+.r3d-ui .intro p {color:var(--r3d-muted);font-size:14px;line-height:1.75;margin:0;max-width:275px}
+.r3d-ui .intro .spec {margin-top:22px;display:flex;align-items:center;gap:8px;color:var(--r3d-muted);font-size:11px;letter-spacing:.04em}
+.r3d-ui .pulse {width:7px;height:7px;border-radius:50%;background:var(--r3d-accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--r3d-accent) 13%,transparent)}
+.r3d-ui .inspector {position:absolute;top:126px;right:5.5vw;width:240px;border:1px solid var(--r3d-border);border-radius:16px;background:var(--r3d-panel);box-shadow:0 12px 32px rgba(14,46,90,.07);padding:21px 20px}
+.r3d-ui .inspector h2 {font:700 10px 'Roboto',sans-serif;letter-spacing:.18em;color:var(--r3d-muted);margin:0 0 20px}
+.r3d-ui .metric {padding:13px 0;border-top:1px solid var(--r3d-border)}
+.r3d-ui .metric span {display:block;font:500 11px 'Roboto','Noto Sans JP',sans-serif;color:var(--r3d-muted);margin-bottom:7px}
+.r3d-ui .metric strong {font:600 27px 'Roboto',sans-serif;letter-spacing:-.04em;color:var(--r3d-text);font-variant-numeric:tabular-nums}
+.r3d-ui .metric em {font:500 12px 'Roboto','Noto Sans JP',sans-serif;font-style:normal;color:var(--r3d-muted);margin-left:5px}
+.r3d-ui .metric.highlight strong {color:var(--r3d-action)}
+.r3d-ui .viewhint {position:absolute;bottom:210px;left:50%;transform:translateX(-50%);background:var(--r3d-panel);border:1px solid var(--r3d-border);border-radius:30px;padding:9px 16px;color:var(--r3d-muted);font-size:12px;white-space:nowrap}
+.r3d-ui .controls {position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:min(1040px,calc(100vw - 40px));padding:16px 18px 14px;display:grid;grid-template-columns:1fr auto auto;gap:16px 23px;align-items:center;border:1px solid var(--r3d-border);background:color-mix(in srgb,var(--r3d-panel) 94%,transparent);backdrop-filter:blur(18px);box-shadow:0 12px 40px rgba(16,43,70,.1);border-radius:18px}
+.r3d-ui .control-unit label {display:block;font:700 10px 'Roboto','Noto Sans JP',sans-serif;letter-spacing:.09em;color:var(--r3d-muted);margin-bottom:10px}
+.r3d-ui .button-row {display:flex;flex-wrap:wrap;gap:7px}
+.r3d-ui .speed {display:flex;gap:8px;align-items:center;color:var(--r3d-muted);font:600 12px 'Roboto',sans-serif}
+.r3d-ui input[type=range] {accent-color:var(--r3d-action);width:112px}
+.r3d-ui .footnote {grid-column:1/-1;margin:0;color:var(--r3d-muted);font-size:10px;border-top:1px solid var(--r3d-border);padding-top:10px;display:flex;justify-content:space-between;gap:20px}
+.r3d-ui .footnote a {color:var(--r3d-action);text-decoration:underline}
+.r3d-ui .status {position:absolute;left:5.5vw;bottom:210px;font-size:11px;color:var(--r3d-muted)}
+@media (max-width:970px) {
+  .r3d-ui .intro {top:100px;left:24px;max-width:220px}
+  .r3d-ui .intro h1 {font-size:25px}
+  .r3d-ui .inspector {right:22px;top:110px;width:185px;padding:16px}
+  .r3d-ui .metric strong {font-size:23px}
+  .r3d-ui .controls {grid-template-columns:1fr auto;bottom:14px}
+  .r3d-ui .speed-unit {grid-column:1/-1}
+  .r3d-ui .status {bottom:240px}
+  .r3d-ui .viewhint {bottom:260px}
+}
+@media (max-width:620px) {
+  .r3d-ui .mast {padding:16px 18px}
+  .r3d-ui #robo-logo {height:30px;max-width:116px}
+  .r3d-ui .edition {font-size:9px;letter-spacing:.08em;padding:7px 10px}
+  .r3d-ui .intro {top:70px;left:18px;max-width:calc(100% - 36px)}
+  .r3d-ui .intro h1 {font-size:21px;line-height:1.17;margin:7px 0}
+  .r3d-ui .intro h1 br {display:none}
+  .r3d-ui .intro p {font-size:11px;max-width:300px;line-height:1.5}
+  .r3d-ui .intro .spec {margin-top:7px;font-size:10px}
+  .r3d-ui .inspector {top:198px;right:12px;width:122px;padding:12px;border-radius:12px}
+  .r3d-ui .inspector h2 {font-size:9px;margin-bottom:4px}
+  .r3d-ui .metric {padding:8px 0}
+  .r3d-ui .metric span {font-size:9px;margin-bottom:2px}
+  .r3d-ui .metric strong {font-size:17px}
+  .r3d-ui .metric em {font-size:9px}
+  .r3d-ui .status,.r3d-ui .viewhint {display:none}
+  .r3d-ui .controls {width:calc(100% - 16px);left:8px;bottom:8px;transform:none;padding:11px;display:flex;flex-direction:column;align-items:stretch;gap:9px;border-radius:12px}
+  .r3d-ui .control-unit label {font-size:9px;margin-bottom:5px}
+  .r3d-ui .button-row {gap:5px}
+  .r3d-ui button {padding:8px 9px;font-size:11px;border-radius:7px}
+  .r3d-ui .speed-unit {display:flex;align-items:center;gap:8px}
+  .r3d-ui .speed-unit label {margin:0}
+  .r3d-ui input[type=range] {width:94px}
+  .r3d-ui .footnote {font-size:9px;line-height:1.3}
+}
+@media (prefers-reduced-motion: reduce) {
+  .r3d-ui button {transition:none}
+}

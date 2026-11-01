@@ -36,7 +36,7 @@
     "bundle": "node scripts/bundle-css.mjs",
     "build": "npm run tokens && npm run bundle",
     "check:contrast": "node scripts/check-contrast.mjs",
-    "test": "npm run build && npm run check:contrast && npm run slides:contracts:check && npm run slides:qa",
+    "test": "npm run build && npm run check:contrast && npm run slides:contracts:check && npm run slides:qa && npm run 3d:test",
     "docs": "node scripts/build-docs.mjs",
     "start": "npm run build && npm run docs && node scripts/serve.mjs",
     "slides:contracts": "node scripts/build-agents.mjs",
@@ -44,7 +44,11 @@
     "slides:qa": "node generator/test-light-variant.mjs && node generator/qa-deck.mjs generator/examples/ai-demo-deck.json",
     "slides:build:example": "node generator/render-deck.mjs generator/examples/ai-demo-deck.json generator/output/ai-demo-deck.pptx",
     "slides:gallery": "node generator/build-gallery.mjs",
-    "slides:visual": "bash grade/render-gallery.sh"
+    "slides:visual": "bash grade/render-gallery.sh",
+    "3d:themes:test": "node --test skills/robo-3d-teardown/scripts/export-theme.test.mjs",
+    "3d:test": "node --test skills/robo-3d-teardown/scripts/*.test.mjs skills/robo-3d-teardown/demo/model.test.mjs",
+    "3d:build": "node skills/robo-3d-teardown/scripts/build-demo.mjs",
+    "3d:qa": "node skills/robo-3d-teardown/scripts/qa-demo.mjs"
   },
   "dependencies": {
     "pptxgenjs": "4.0.1"

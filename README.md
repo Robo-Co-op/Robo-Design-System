@@ -362,6 +362,20 @@ For websites, landing pages, dashboards and other product interfaces, use the [R
 
 The Presentation OS above remains authoritative for editable decks.
 
+### Interactive 3D — Robo 3D Teardown
+
+For **interactive 3D mechanical explainers, exploded views and training simulations**, use [Robo 3D Teardown](skills/robo-3d-teardown/SKILL.md). It adapts the reference-first workflow of [elvarofficial/teardown](https://github.com/elvarofficial/teardown) to Robo's existing light/dark brand tokens and QA. A pinned upstream runtime is fetched only during optional CI/local builds and bundled into an **offline interactive 3D demo**; the third-party source itself is **not vendored**. See the [demo README](skills/robo-3d-teardown/demo/README.md) and [upstream and security notes](skills/robo-3d-teardown/references/upstream.md).
+
+```bash
+npm run 3d:test   # mechanism math and theme export — runs as part of npm test
+npm run 3d:build  # single-file offline HTML demo (needs a reviewed upstream checkout)
+npm run 3d:qa     # desktop/mobile Chrome interaction test and screenshots
+```
+
+`3d:build` and `3d:qa` run in GitHub Actions (`.github/workflows/robo-3d-teardown.yml`),
+which checks out the upstream at a pinned commit, installs it with lifecycle scripts
+disabled, and uploads the HTML, screenshots and QA report as a build artifact.
+
 ---
 
 ## Repository
