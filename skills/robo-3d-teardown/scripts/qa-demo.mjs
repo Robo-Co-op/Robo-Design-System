@@ -58,10 +58,12 @@ try{
     await page.locator('#play').click();
     assert.equal(await page.evaluate(()=>window.ROBO_3D.getState().playing),false);
     await page.evaluate(()=>window.ROBO_3D.setAngle(Math.PI));
-    await page.waitForTimeout(120);
+    // Software WebGL on CI runners can take longer than a fixed sleep to draw one frame, so wait
+    // until a frame has actually been rendered at the requested angle before reading its pose.
+    await page.waitForFunction(()=>Math.abs((window.__ROBO3D_LASTPOSE__?.crankDeg??0)-180)<1e-6,null,{timeout:15000});
     const last=await page.evaluate(()=>window.__ROBO3D_LASTPOSE__);
-    assert.ok(Math.abs(last.strokeMm)<1e-5,'Stroke readout follows single mechanism model');
-    assert.ok(Math.abs(last.rodLengthMm-57)<1e-5,'Rod length is held across frames');
+    assert.ok(Math.abs(last.strokeMm)<1e-5,`Stroke readout follows single mechanism model (${device.name}: ${last.strokeMm} mm at ${last.crankDeg} deg)`);
+    assert.ok(Math.abs(last.rodLengthMm-57)<1e-5,`Rod length is held across frames (${device.name}: ${last.rodLengthMm} mm)`);
     assert.equal(errors.length,0,'No JS exceptions during interaction');
     for(const button of ['play','cut','explode','tour','reset'])assert.equal(await page.locator('#'+button).isVisible(),true);
     for(const file of ['overview','exploded'])assert.ok(statSync(join(shots,device.name+'-'+file+'.png')).size>20000,'Screenshot not blank');
