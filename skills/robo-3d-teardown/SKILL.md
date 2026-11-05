@@ -11,7 +11,7 @@ Build an inspectable, usable 3D mechanism demo while keeping **Robo Design Syste
 
 - This skill concerns **mechanical or spatial explanations with meaningful 3D interaction**. Do not add 3D to a slide or landing page just for decoration.
 - For ordinary web UI use `skills/robo-frontend-design/SKILL.md`; for editable PowerPoint use root `AGENTS.md` and `contracts/`. This skill does not modify those systems.
-- Read `tokens/brands/<brand>.json`, `tokens/core.json`, `BRAND_FOUNDATIONS.md`, and `contracts/brands.json`. Use the existing **light** Robo Lab web theme when requested, even though Robo Lab's presentation variants are dark.
+- Read `tokens/brands/<brand>.json`, `tokens/core.json`, `README.md` (design-system guide), and `contracts/brands.json`. Use the existing **light** Robo Lab web theme when requested, even though Robo Lab's presentation variants are dark.
 - Never copy another brand's logo, palette, typeface, or trademark into the output. Use real approved logo assets, not recreated text/AI logos.
 
 ## 2. Require engineering evidence before modeling

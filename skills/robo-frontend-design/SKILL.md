@@ -11,7 +11,7 @@ Create distinctive, usable Robo-branded interfaces. Treat the brand system as th
 
 Read the relevant files before proposing visual changes:
 
-- `BRAND_FOUNDATIONS.md` — typography, semantics, accessibility and logo rules.
+- `README.md` — the design-system guide: typography, semantics, accessibility and logo rules.
 - `tokens/core.json` — spacing, type, breakpoints, focus, motion and density.
 - `tokens/brands/<brand>.json` — canonical brand palette and light/dark semantic themes.
 - `src/css/` — existing styles and reusable components.
