@@ -1,0 +1,4 @@
+interface:
+  display_name: "Robo Frontend Design"
+  short_description: "Robo-branded web UI and visual QA"
+  brand_color: "#007DD1"
