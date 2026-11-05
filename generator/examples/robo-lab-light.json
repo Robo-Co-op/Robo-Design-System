@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Robo Lab Light presentation example",
+    "subtitle": "White-background layouts for enterprise communication",
+    "brand": "robo-lab",
+    "preset": "robo-lab-light",
+    "author": "Robo Co-op",
+    "language": "en"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "section": "LIGHT",
+      "title": "Make the argument clear.",
+      "subtitle": "A white-background Robo Lab example, not a customer case study.",
+      "intent": "decide",
+      "archetype": "01"
+    },
+    {
+      "type": "process",
+      "section": "WORKFLOW",
+      "title": "Choose the message before the layout.",
+      "intent": "time",
+      "archetype": "37",
+      "steps": [
+        { "title": "Frame", "body": "Name the audience and the decision." },
+        { "title": "Explain", "body": "Write one supported claim per slide." },
+        { "title": "Visualize", "body": "Choose a chart or diagram that expresses the relationship." },
+        { "title": "Verify", "body": "Render the deck and check readability and evidence." }
+      ],
+      "source": "Robo Presentation OS: contracts/storytelling.json"
+    },
+    {
+      "type": "comparison",
+      "section": "THEME",
+      "title": "Keep the brand; choose the presentation context.",
+      "intent": "compare",
+      "archetype": "16",
+      "columns": [
+        { "label": "LIGHT", "title": "White background", "points": ["SME sales and enterprise proposals", "Navy text with restrained blue accents", "No dark terminal panels"] },
+        { "label": "CORE", "title": "Navy background", "points": ["Technical strategy and system demos", "Existing default preserved", "Precise system-grid language"] },
+        { "label": "CYBER", "title": "Expressive dark", "points": ["Flagship demos and launches", "Denser grid and trace cues", "Use only when the context fits"] }
+      ],
+      "source": "Robo Presentation OS: contracts/variants.json"
+    }
+  ]
+}

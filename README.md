@@ -313,32 +313,40 @@ A deck is built story-first, then rendered:
 | `grade/` | Renders every layout × variant to PNG and compares against `baseline.json` |
 | `slides/`, `taste/`, `qa/` | Presentation tokens, layout catalogue, taste presets, slide rules |
 
-Eight variants — a Core and an Expressive mode per brand:
+Nine variants — the existing Core/Expressive pairs plus Robo Lab Light:
 
-| Brand | Core | Expressive |
-|---|---|---|
-| Robo Co-op | `robo-coop-core` | `robo-coop-dark` |
-| Robo Lab | `robo-lab-core` | `robo-lab-cyber` |
-| Co-op Lab | `coop-lab-core` | `coop-lab-hack` |
-| Robo University | `robo-university-core` | `robo-university-explore` |
+| Brand | Core | Expressive | Additional Light option |
+|---|---|---|---|
+| Robo Co-op | `robo-coop-core` | `robo-coop-dark` | — |
+| Robo Lab | `robo-lab-core` | `robo-lab-cyber` | `robo-lab-light` |
+| Co-op Lab | `coop-lab-core` | `coop-lab-hack` | — |
+| Robo University | `robo-university-core` | `robo-university-explore` | — |
+
+For white-background SME sales decks and enterprise proposals, explicitly select
+`meta.brand: "robo-lab"` and `meta.preset: "robo-lab-light"`. The existing navy
+`robo-lab-core` default and legacy aliases are unchanged. See the
+[Light example and usage](generator/README.md#white-background-robo-lab-decks) and
+[palette notes](visual-systems/robo-lab.md#light--robo-lab-light).
 
 ```bash
 npm install                    # pptxgenjs — only the slide generator needs it
 npm run slides:contracts       # regenerate AGENTS.md after editing contracts/
 npm run slides:contracts:check # fail if AGENTS.md is stale
-npm run slides:qa              # structural QA on the example deck
+npm run slides:qa              # structural QA and Light variant checks
 npm run slides:build:example   # -> generator/output/ai-demo-deck.pptx
 npm run slides:gallery         # every layout × variant -> generator/output/gallery/
 npm run slides:visual          # render to PNG and grade (LibreOffice, Poppler, ImageMagick)
 ```
 
 `slides:visual` runs in GitHub Actions (`.github/workflows/slide-generator.yml`), which
-installs the render toolchain; 8 variants × 7 layouts = 56 graded renders. Locally it
+installs the render toolchain; 9 variants × 7 layouts = 63 graded renders. Locally it
 needs `bash`, LibreOffice, Poppler and ImageMagick on the path. See `grade/README.md`.
 
 The variant colours in `contracts/variants.json` are copied hex values, not references
 to `tokens/`, and `check:contrast` does not cover them. Changing a brand token does not
-update the slides.
+update the slides. The Light text roles are checked separately by `slides:qa` across
+the canvas and both panel surfaces; this does not claim contrast coverage for every
+other slide variant.
 
 ---
 

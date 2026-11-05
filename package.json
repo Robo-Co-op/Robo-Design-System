@@ -40,7 +40,7 @@
     "start": "npm run build && npm run docs && node scripts/serve.mjs",
     "slides:contracts": "node scripts/build-agents.mjs",
     "slides:contracts:check": "node scripts/build-agents.mjs --check",
-    "slides:qa": "node generator/qa-deck.mjs generator/examples/ai-demo-deck.json",
+    "slides:qa": "node generator/test-light-variant.mjs && node generator/qa-deck.mjs generator/examples/ai-demo-deck.json",
     "slides:build:example": "node generator/render-deck.mjs generator/examples/ai-demo-deck.json generator/output/ai-demo-deck.pptx",
     "slides:gallery": "node generator/build-gallery.mjs",
     "slides:visual": "bash grade/render-gallery.sh"
